@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TICKMES | Find and buy tickets to live events</title>
+<meta name="description" content="Search concerts and live shows, then get your tickets in a few taps.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="TICKMES home"><img src="img/logo.png" alt="TICKMES" width="150" height="50"></a>
+    <nav id="nav" aria-label="Event categories">
+      <a href="#events" data-cat="Concerts">Concerts</a>
+      <a href="#events" data-cat="Sports">Sports</a>
+      <a href="#events" data-cat="Arts">Arts</a>
+      <a href="#events" data-cat="Theatre">Theatre</a>
+      <a href="#events" data-cat="Comedy">Comedy</a>
+      <a href="#events" data-cat="Family">Family</a>
+      <button class="btn btn-small nav-signin" data-open-auth="signin">Sign in</button>
+    </nav>
+    <div class="bar-end">
+      <button class="btn btn-small desk-signin" data-open-auth="signin">Sign in</button>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <img class="hero-bg" src="img/hero.jpg" alt="" width="1800" height="1286" fetchpriority="high">
+  <div class="wrap hero-inner">
+    <h1>Find your next live night.</h1>
+    <p class="lead">Search concerts and shows, then get your tickets in a few taps.</p>
+    <form class="search" id="search" role="search">
+      <label class="f-text"><span>Event or venue</span><input type="search" id="q" placeholder="Try Davido or O2 Arena" autocomplete="off"></label>
+      <label class="f-date"><span>Date</span><input type="date" id="d"></label>
+      <button class="btn" type="submit">Search events</button>
+    </form>
+  </div>
+</section>
+
+<section class="featured wrap" id="featured" aria-labelledby="feat-h">
+  <article class="feature">
+    <img src="img/west-coast-band.jpg" alt="Crowd with raised hands in front of a lit concert stage" width="1400" height="933">
+    <div class="feature-body">
+      <span class="badge">Featured</span>
+      <h2 id="feat-h">West Coast Band</h2>
+      <p class="feature-meta">Tue 30 Jul 2024 &nbsp;|&nbsp; Maddison Square</p>
+      <button class="btn" data-buy="West Coast Band">Get tickets</button>
+    </div>
+  </article>
+</section>
+
+<section class="events wrap" id="events" aria-labelledby="ev-h">
+  <div class="sec-head">
+    <h2 id="ev-h">Upcoming events</h2>
+    <p id="count" role="status"></p>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by category">
+    <button class="chip" data-cat="All" aria-pressed="true">All</button>
+    <button class="chip" data-cat="Concerts" aria-pressed="false">Concerts</button>
+    <button class="chip" data-cat="Sports" aria-pressed="false">Sports</button>
+    <button class="chip" data-cat="Arts" aria-pressed="false">Arts</button>
+    <button class="chip" data-cat="Theatre" aria-pressed="false">Theatre</button>
+    <button class="chip" data-cat="Comedy" aria-pressed="false">Comedy</button>
+    <button class="chip" data-cat="Family" aria-pressed="false">Family</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>
+    <h3>No events found</h3>
+    <p>Try a different search, date or category.</p>
+    <button class="btn btn-ghost" id="clear">Clear filters</button>
+  </div>
+</section>
+
+<section class="moments" aria-labelledby="mo-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="mo-h">Moments from the stage</h2>
+    </div>
+    <div class="masonry">
+      <img src="img/g1.jpg" alt="Singer with arms open beneath a glowing cross on stage" loading="lazy" width="800" height="1000">
+      <img src="img/g2.jpg" alt="Performers on a lit stage in front of a seated audience" loading="lazy" width="800" height="618">
+      <img src="img/g3.jpg" alt="Performer in a pink robe mid-song on a dark stage" loading="lazy" width="800" height="1000">
+      <img src="img/g4.jpg" alt="Wide view of a concert hall with stage lights" loading="lazy" width="800" height="534">
+      <img src="img/g5.jpg" alt="Performer in an orange jumpsuit kneeling on stage" loading="lazy" width="800" height="1000">
+      <img src="img/g6.jpg" alt="Dancer in traditional dress on a dark stage" loading="lazy" width="800" height="1000">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <img src="img/logo.png" alt="TICKMES" width="120" height="40">
+    <nav aria-label="Footer">
+      <a href="#events" data-cat="Concerts">Concerts</a>
+      <a href="#events" data-cat="Sports">Sports</a>
+      <a href="#events" data-cat="Arts">Arts</a>
+      <a href="#events" data-cat="Theatre">Theatre</a>
+      <a href="#events" data-cat="Comedy">Comedy</a>
+      <a href="#events" data-cat="Family">Family</a>
+    </nav>
+    <ul class="social">
+      <li><a href="#" aria-label="TICKMES on Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.5c0-.7.3-1 1-1h2V2h-3c-3 0-4.5 1.8-4.5 4.4V8H7v3.5h2.5V22H14V11.5h2.8L17.3 8z"/></svg></a></li>
+      <li><a href="#" aria-label="TICKMES on X"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.9 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.3 4.7H5.5z"/></svg></a></li>
+      <li><a href="#" aria-label="TICKMES on Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a></li>
+    </ul>
+    <p class="copy">&copy; <span id="year">2026</span> TICKMES. All rights reserved.</p>
+  </div>
+</footer>
+
+<dialog id="auth" aria-labelledby="auth-title">
+  <div class="auth-img" aria-hidden="true"></div>
+  <div class="auth-main">
+    <button class="close" id="auth-close" aria-label="Close">&times;</button>
+    <div class="tabs" role="tablist" aria-label="Account">
+      <button role="tab" id="tab-signin" aria-selected="true" data-mode="signin">Sign in</button>
+      <button role="tab" id="tab-signup" aria-selected="false" data-mode="signup">Create account</button>
+    </div>
+    <h2 id="auth-title">Sign in</h2>
+    <p class="auth-sub" id="auth-sub">Sign in to buy tickets and keep track of your orders.</p>
+    <form id="auth-form" novalidate>
+      <label id="name-row" hidden>Full name<input type="text" name="name" autocomplete="name"></label>
+      <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      <label>Password<input type="password" name="password" autocomplete="current-password" required minlength="6"></label>
+      <div class="row" id="signin-extras">
+        <label class="check"><input type="checkbox" name="remember"> Remember me</label>
+        <a href="#" id="forgot">Forgot password?</a>
+      </div>
+      <button class="btn" type="submit" id="auth-submit">Sign in</button>
+      <p class="form-note" id="auth-note" role="status"></p>
+    </form>
+    <p class="terms">By continuing, you agree to our <a href="#">Terms and Conditions</a>.</p>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
